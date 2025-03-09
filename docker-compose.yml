@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  # MongoDB service
+  mongodb:
+    image: mongo:6.0
+    container_name: Mongo_Database
+    ports:
+      - "${PORT_MONGO}:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+
+  # Node.js app service
+  app:
+    build: .
+    container_name: Nodejs_App
+    ports:
+      - "${PORT_SERVICE1}:3000"
+    volumes:
+      - .:/app
+    environment:
+      MONGO_URI: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017/smart-tourism?authSource=admin
+    depends_on:
+      - mongodb
+
+# Volumes for persistent data
+volumes:
+  mongodb_data:
