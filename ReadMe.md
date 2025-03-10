@@ -1,18 +1,18 @@
 # Smart Turism RestAPI
 
-# How to Run
+### How to Run
 
-## Access the API:
+### Access the API:
 
-## Features
+### Features
 
-## Technologies Used
+### Technologies Used
 
-## Project Structure
+### Project Structure
 
-## Troubleshooting
+### Troubleshooting
 
-## Disclaimer
+### Disclaimer
 
 This project is protected by copyright and is not available for public use. All rights are reserved. Please see the `LICENSE` file for more information.
 
