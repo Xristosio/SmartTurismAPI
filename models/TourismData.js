@@ -1,4 +1,3 @@
-// models/TourismData.js
 const mongoose = require("mongoose");
 
 const tourismDataSchema = new mongoose.Schema({

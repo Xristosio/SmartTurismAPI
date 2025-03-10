@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
-const { populateDatabase } = require("./controllers/tourismDataController");
+const tourismRoutes = require("./routes/tourismRoutes");
 
 dotenv.config();
 
@@ -14,10 +14,10 @@ connectDB();
 app.use(express.json());
 
 // Routes
-app.post("/api/populate", populateDatabase);
+app.use("/api/v1/tourism", tourismRoutes);
 
 // Start the server
-const PORT = process.env.PORT_SERVICE1 || 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
