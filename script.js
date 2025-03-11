@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const connectDB = require("./config/db");
 const tourismRoutes = require("./routes/tourismRoutes");
 const env = require("./config");
@@ -11,6 +12,7 @@ const app = express();
 // MongoDB
 connectDB();
 
+app.use(cors());
 app.use(express.json());
 
 // General routes

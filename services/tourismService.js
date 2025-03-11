@@ -80,7 +80,15 @@ const createCountry = async (countryData) => {
  */
 const filterCountries = async (criterion, type, limit) => {
   try {
-    const sortOrder = type === "highest" ? -1 : 1;
+    const rankingFields = ["QualityOfLife", "Adventure", "Heritage"];
+    const costFields = ["CostOfLivingIndex", "RestaurantPriceIndex"];
+
+    let sortOrder;
+    if (rankingFields.includes(criterion)) {
+      sortOrder = type === "highest" ? 1 : -1;
+    } else if (costFields.includes(criterion)) {
+      sortOrder = type === "highest" ? -1 : 1;
+    }
 
     const query = TourismData.find({ [criterion]: { $ne: null } }).sort({
       [criterion]: sortOrder,
