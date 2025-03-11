@@ -21,7 +21,7 @@ This project is a RESTful API designed to manage tourism-related data, such as c
 3. Run `docker-compose.yml`.
 4. Hit the `POST` enpoint `http://localhost:PORT/api/v1/tourism/populate` to fill the database.
 
-**`Note: For filter simple UI open `index.html`in FrontEnd folder`**
+**`Note: For filter simple UI open index.html in FrontEnd folder`**
 
 ### Access the API:
 
