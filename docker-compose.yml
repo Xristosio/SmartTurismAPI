@@ -26,6 +26,6 @@ services:
     depends_on:
       - mongodb
 
-# Volumes for persistent data
+# Volumes for data
 volumes:
   mongodb_data:

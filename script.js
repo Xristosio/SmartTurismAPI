@@ -8,16 +8,14 @@ dotenv.config();
 
 const app = express();
 
-// Connect to MongoDB
+// MongoDB
 connectDB();
 
-// Middleware
 app.use(express.json());
 
-// Routes
+// General routes
 app.use("/api/v1/tourism", tourismRoutes);
 
-// Start the server
 const PORT = env.PORT_SERVICE1;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

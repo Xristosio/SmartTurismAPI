@@ -12,6 +12,9 @@ const getAllCountries = async () => {
   }
 };
 
+/**
+ * @param {String} Countryname to search.
+ */
 const deleteCountry = async (country) => {
   try {
     const response = await TourismData.findOneAndDelete({ Country: country });
@@ -24,6 +27,10 @@ const deleteCountry = async (country) => {
   }
 };
 
+/**
+ * @param {String} Countryname to search.
+ * @param {Object} updatedData given to call body.
+ */
 const updateCountry = async (country, updatedData) => {
   try {
     const countryDetails = await TourismData.findOne({ Country: country });
@@ -43,6 +50,9 @@ const updateCountry = async (country, updatedData) => {
   }
 };
 
+/**
+ * @param {Object} countryData the necessary fields to create a country.
+ */
 const createCountry = async (countryData) => {
   try {
     const { Country } = countryData;
@@ -63,6 +73,11 @@ const createCountry = async (countryData) => {
   }
 };
 
+/**
+ * @param {String} criterion field to search .
+ * @param {number} type highest or lowest.
+ * @param {number} limit records that will return.
+ */
 const filterCountries = async (criterion, type, limit) => {
   try {
     const sortOrder = type === "highest" ? -1 : 1;

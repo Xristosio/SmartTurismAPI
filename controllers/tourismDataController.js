@@ -77,7 +77,7 @@ const filterCountries = async (req, res) => {
   });
 };
 
-// Export all controller methods
+// controller methods
 module.exports = {
   populateDatabase,
   getAllCountries,

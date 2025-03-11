@@ -2,14 +2,17 @@ const fs = require("fs");
 const path = require("path");
 const TourismData = require("../models/TourismData");
 
+/**
+ * Load the given file in data folder into database.
+ */
 const populateDB = async () => {
   try {
-    // Read the JSON file
+    // JSON file
     const filePath = path.join(__dirname, "../data/tourismData.json");
     const data = fs.readFileSync(filePath, "utf8");
     const tourismData = JSON.parse(data);
 
-    // Transform data to match the schema
+    // Match the schema
     const transformedData = tourismData.map((item) => ({
       Country: item.Country,
       QualityOfLife: item["Quality of Life"],
