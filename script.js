@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const tourismRoutes = require("./routes/tourismRoutes");
+const env = require("./config");
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ app.use(express.json());
 app.use("/api/v1/tourism", tourismRoutes);
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = env.PORT_SERVICE1;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "594e4b0e-718a-4d06-aec1-aa722951e418",
+		"name": "Smart Turism API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38156170"
+	},
+	"item": [
+		{
+			"name": "PopulateDB",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tourism/populate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tourism",
+						"populate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllCountries",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tourism/getAllCountries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tourism",
+						"getAllCountries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteByCountryName",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tourism/delete/Bahamas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tourism",
+						"delete",
+						"Bahamas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCountryByName",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"QualityOfLife\": 100,\r\n    \"Adventure\": 100,\r\n    \"Heritage\": 100,\r\n    \"CostOfLivingIndex\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tourism/update/Poland",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tourism",
+						"update",
+						"Poland"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Country",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Country\": \"CountryTest\",\r\n    \"QualityOfLife\": 100,\r\n    \"Adventure\": 100,\r\n    \"Heritage\": 100,\r\n    \"CostOfLivingIndex\": 100,\r\n    \"RestaurantPriceIndex\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tourism/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tourism",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Cost of living",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tourism/filter?criterion=CostOfLivingIndex&type=highest&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tourism",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "criterion",
+							"value": "CostOfLivingIndex"
+						},
+						{
+							"key": "type",
+							"value": "highest"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Quality of life",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tourism/filter?criterion=QualityOfLife&type=highest&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tourism",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "criterion",
+							"value": "QualityOfLife"
+						},
+						{
+							"key": "type",
+							"value": "highest"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filters Restaurant Price Index",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tourism/filter?criterion=RestaurantPriceIndex&type=lowest&limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tourism",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "criterion",
+							"value": "RestaurantPriceIndex"
+						},
+						{
+							"key": "type",
+							"value": "lowest"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
