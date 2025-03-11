@@ -19,6 +19,7 @@ This project is a RESTful API designed to manage tourism-related data, such as c
    - Create a `.env` file in the root directory.
    - Add variables like in `.env.example` file.
 3. Run `docker-compose.yml`.
+4. Hit the `POST` enpoint `http://localhost:PORT/api/v1/tourism/populate` to fill the database. 
 
 ### Access the API:
 
